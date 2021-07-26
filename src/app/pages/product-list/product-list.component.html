@@ -1,0 +1,7 @@
+<div class="container">
+  <mat-card *ngFor="let data of products" [routerLink]="['product-details', data._id]">
+    <h2>{{data.productName}}</h2>
+    <p>{{data.price}}</p>
+    <p>{{data._id}}</p>
+  </mat-card>
+</div>

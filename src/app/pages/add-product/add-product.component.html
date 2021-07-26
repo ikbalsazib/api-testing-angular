@@ -1,0 +1,81 @@
+<form [formGroup]="dataForm" (ngSubmit)="onSubmit()"
+      #templateForm="ngForm"
+      fxLayout="column" fxLayoutAlign="space-around center">
+
+
+  <mat-form-field appearance="outline">
+    <mat-label>Product Name</mat-label>
+    <input formControlName="productName" matInput placeholder="Enter data" required>
+    <mat-error>This field is required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>productSlug</mat-label>
+    <input formControlName="productSlug" matInput placeholder="Enter data" required>
+    <mat-error>This field is required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>sku</mat-label>
+    <input formControlName="sku" matInput placeholder="Enter data" required>
+    <mat-error>This field is required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>price</mat-label>
+    <input formControlName="price" matInput placeholder="Enter data" required>
+    <mat-error>This field is required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>quantity</mat-label>
+    <input formControlName="quantity" matInput placeholder="Enter data" required>
+    <mat-error>This field is required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>rating</mat-label>
+    <input formControlName="rating" matInput placeholder="Enter data" required>
+    <mat-error>This field is required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>shortDescription</mat-label>
+    <textarea matInput formControlName="shortDescription"></textarea>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>description</mat-label>
+    <textarea matInput formControlName="description" cols="10"></textarea>
+  </mat-form-field>
+
+
+  <mat-form-field appearance="outline">
+    <mat-label>Select brand</mat-label>
+    <mat-select formControlName="brand">
+      <mat-option *ngFor="let data of brands" [value]="data.name">
+        {{  data.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Select category</mat-label>
+    <mat-select formControlName="category">
+      <mat-option *ngFor="let data of categories" [value]="data.name">
+        {{  data.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Select subCategory</mat-label>
+    <mat-select formControlName="subCategory">
+      <mat-option *ngFor="let data of subCategories" [value]="data.name">
+        {{  data.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">Submit</button>
+</form>
